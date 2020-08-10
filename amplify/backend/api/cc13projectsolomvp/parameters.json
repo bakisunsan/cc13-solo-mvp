@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "cc13projectsolomvp",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authcc13projectsolomvp07f359c3",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

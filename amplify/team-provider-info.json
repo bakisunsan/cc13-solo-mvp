@@ -10,6 +10,11 @@
             "StackName": "amplify-cc13projectsolomvp-default-161658",
             "StackId": "arn:aws:cloudformation:ap-northeast-1:174170275950:stack/amplify-cc13projectsolomvp-default-161658/7b58ff90-dad9-11ea-a82a-0eb7b90bbf8e",
             "AmplifyAppId": "d2owfkbqjv89c4"
+        },
+        "categories": {
+            "auth": {
+                "cc13projectsolomvp07f359c3": {}
+            }
         }
     }
 }
