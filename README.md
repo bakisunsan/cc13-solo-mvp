@@ -1,5 +1,6 @@
 # Kanban project-solo
 
+![](./logo.png)
 ![](./MVP-mock.jpg)
 
 ## TODO
@@ -77,3 +78,9 @@ TODO
 ## Ref
 https://aws.amazon.com/jp/builders-flash/202008/amplify-crud-app/
 https://github.com/matsuihidetoshi/vueamplifydev.git
+
+amplify init
+amplify auth add
+amplify add api
+
+amplify delete

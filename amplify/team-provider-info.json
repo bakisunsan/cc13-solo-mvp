@@ -1,19 +1,19 @@
 {
-    "default": {
+    "dev": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-cc13projectsolomvp-default-161658-authRole",
-            "UnauthRoleArn": "arn:aws:iam::174170275950:role/amplify-cc13projectsolomvp-default-161658-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::174170275950:role/amplify-cc13projectsolomvp-default-161658-authRole",
+            "AuthRoleName": "amplify-cc13projectsolomvp-dev-75453-authRole",
+            "UnauthRoleArn": "arn:aws:iam::174170275950:role/amplify-cc13projectsolomvp-dev-75453-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::174170275950:role/amplify-cc13projectsolomvp-dev-75453-authRole",
             "Region": "ap-northeast-1",
-            "DeploymentBucketName": "amplify-cc13projectsolomvp-default-161658-deployment",
-            "UnauthRoleName": "amplify-cc13projectsolomvp-default-161658-unauthRole",
-            "StackName": "amplify-cc13projectsolomvp-default-161658",
-            "StackId": "arn:aws:cloudformation:ap-northeast-1:174170275950:stack/amplify-cc13projectsolomvp-default-161658/7b58ff90-dad9-11ea-a82a-0eb7b90bbf8e",
-            "AmplifyAppId": "d2owfkbqjv89c4"
+            "DeploymentBucketName": "amplify-cc13projectsolomvp-dev-75453-deployment",
+            "UnauthRoleName": "amplify-cc13projectsolomvp-dev-75453-unauthRole",
+            "StackName": "amplify-cc13projectsolomvp-dev-75453",
+            "StackId": "arn:aws:cloudformation:ap-northeast-1:174170275950:stack/amplify-cc13projectsolomvp-dev-75453/829ccdd0-db5c-11ea-ab05-0e0119a58df2",
+            "AmplifyAppId": "d7tefz599ypu0"
         },
         "categories": {
             "auth": {
-                "cc13projectsolomvp07f359c3": {}
+                "cc13projectsolomvpa93d5142": {}
             }
         }
     }

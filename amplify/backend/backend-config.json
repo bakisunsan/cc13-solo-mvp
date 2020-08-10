@@ -1,6 +1,6 @@
 {
 	"auth": {
-		"cc13projectsolomvp07f359c3": {
+		"cc13projectsolomvpa93d5142": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": [],
@@ -16,7 +16,7 @@
 					"defaultAuthentication": {
 						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
 						"userPoolConfig": {
-							"userPoolId": "authcc13projectsolomvp07f359c3"
+							"userPoolId": "authcc13projectsolomvpa93d5142"
 						}
 					},
 					"additionalAuthenticationProviders": []
