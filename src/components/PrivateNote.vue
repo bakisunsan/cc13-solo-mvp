@@ -13,7 +13,10 @@
     <div class="private-notes-area">
       <div v-for="(privateNote, id) in privateNotes" v-bind:key="id">
         <div class="private-note" :color="randomColor(privateNote.content)">
-          {{ privateNote.content }}
+          <div>
+            <div>{{ privateNote.content }}</div>
+            <a @click="() => deletePrivateNote(privateNote.id)"><font-awesome-icon :icon="['fas', 'times']" size="1x" /></a>	
+          </div>
         </div>
       </div>
     </div>
@@ -21,7 +24,7 @@
 </template>
 <script>
 import { API, Auth, graphqlOperation} from "aws-amplify"
-import { createPrivateNote } from "../graphql/mutations"
+import { createPrivateNote, deletePrivateNote } from "../graphql/mutations"
 import { listPrivateNotes } from "../graphql/queries"
 import { getPrivateNote } from "../graphql/queries"
 import { onCreatePrivateNote } from "../graphql/subscriptions"
@@ -67,6 +70,16 @@ export default {
       try {
         this.content = ""
         await API.graphql(graphqlOperation(createPrivateNote, {input: privateNote}))
+      } catch (error) {
+        error
+      }
+    },
+    deletePrivateNote: async function (id) {
+      if (!id) return
+      try {
+        this.content = ""
+        await API.graphql(graphqlOperation(deletePrivateNote, {input: {id: id}}))
+        // TODO subscribe or read
       } catch (error) {
         error
       }
@@ -198,4 +211,20 @@ export default {
   -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
   transform: matrix(-1, -0.1, 0, 1, 0, 0);
 }
+
+.private-note:hover {     
+    opacity: 80%;
+}
+
+a {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  opacity: 0%;
+}
+
+a:hover {
+  opacity: 30%;
+}
+
 </style>
