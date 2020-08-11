@@ -1,5 +1,10 @@
 <template>
   <div class="privateNote">
+    <div id="icon">
+          <font-awesome-icon v-if="email" :icon="['fas', 'user']" size="2x" />  
+          <div v-seen="email"> Hello, {{email}} ! </div>
+    </div>
+    <br/>
     <h1>Put Your Post-it</h1>
     <div id="chat-form">
       <textarea v-model="content" name="content" class="form" placeholder="New Task" />
@@ -30,6 +35,7 @@ export default {
       privateNote: null,
       privateNotes: [],
       owner: "",
+      email: "",
       limit: 2 ** 31 - 1
     }
   },
@@ -53,6 +59,7 @@ export default {
     setOwner: async function () {
       const user = await Auth.currentUserInfo()
       this.owner = user.username
+      this.email = user.attributes.email.slice(0, 4) + "**@**" ;
     },
     createPrivateNote: async function () {
       if (this.content === "") return
@@ -90,6 +97,12 @@ export default {
 }
 </script>
 <style scoped>
+  #icon {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2c3e50;
+    bottom: 10px;
+  }
   h1 {
     margin: 0 auto;
     width: 22rem;
@@ -126,7 +139,9 @@ export default {
     text-align: center;
     position: relative;
     font-family: 'Reenie Beanie';       
-    display: inline-block;     
+    display: inline-block;
+    top: 5px;
+    right: 50px;     
   }
   .private-notes-area {
     display: grid;

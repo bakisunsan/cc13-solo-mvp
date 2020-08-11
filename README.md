@@ -12,28 +12,30 @@
     - [ ] Basic Kanban
         - [ ] Create Kanban lane
         - [ ] Remove Kanban lane
-        - [ ] Put Post-it
+        - [x] List Post-it
+        - [x] Put Post-it
         - [ ] Remove Post-it
         - [ ] Move Post-it
     - [ ] Collaborative
         - [ ] Can see same Kanban
         - [ ] Can modify same Kanban
         - [ ] Show Name
-        - [ ] Show Name on Post-It
-        - [ ] Send Link
-    - [ ] Authentication
+    - [x] Authentication
 - [x] Create UI Image
-- [ ] Design Software Architecture
-- [ ] Design System Architecture
-    - [ ] AWS Amplify
+- [x] Design Software Architecture
+- [x] Design System Architecture
+    - [x] AWS Amplify
 - [ ] Test
     - [ ] Unit
     - [ ] E2E
 - [ ] Prepare Presentation
+- [ ] Write Readme
 
 ## About this App
+TODO
 
 ## Architecture
+TODO
 
 ## Project setup
 ```
@@ -50,37 +52,23 @@ yarn serve
 yarn build
 ```
 
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Run your end-to-end tests
-```
-yarn test:e2e
-```
-
 ### Lints and fixes files
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Install
 TODO
 
 ## Ref
 https://aws.amazon.com/jp/builders-flash/202008/amplify-crud-app/
+
 https://github.com/matsuihidetoshi/vueamplifydev.git
 
 amplify init
+
 amplify auth add
+
 amplify add api
 
 amplify delete
