@@ -1,12 +1,14 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Private Note</router-link> |
-      <router-link to="/signin">Sign In</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <header>
+        <div id="nav">
+          <router-link to="/signin">Sign In/Out</router-link> |
+          <router-link to="/">Kanban</router-link> |
+          <router-link to="/about">About</router-link>
+        </div>
+    </header>
     <router-view/>
-  </div>
+ </div>
 </template>
 
 <style>
@@ -29,5 +31,17 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+footer {
+    margin:  0 auto;
+    overflow: hidden;
+    box-shadow: .25rem 0 .25rem hsla(0, 0%, 0%, .1);
+    background-image:
+      linear-gradient(180deg, hsla(0, 0%, 45%, .1) 2rem, hsla(0, 100%, 100%, 0) 2.5rem)
+    , linear-gradient(180deg, hsla(15, 100%, 85%, 1), hsla(15, 100%, 85%, 1));font-size: 1.7rem;
+    line-height: 0.8;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 </style>

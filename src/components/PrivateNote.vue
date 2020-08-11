@@ -1,16 +1,17 @@
 <template>
   <div class="privateNote">
     <h1>Put Your Post-it</h1>
+    <div id="chat-form">
+      <textarea v-model="content" name="content" class="form" placeholder="New Task🖋️">
+      </textarea> <br/>
+      <button class="submit" v-on:click="createPrivateNote()">Put It!</button>
+    </div>
     <div class="private-notes-area">
       <div v-for="(privateNote, id) in privateNotes" v-bind:key="id">
         <div class="private-note">
           {{ privateNote.content }}
         </div>
       </div>
-    </div>
-    <div id="chat-form">
-      <textarea v-model="content" name="content" class="form" placeholder="Content"></textarea><br/>
-      <button class="submit" v-on:click="createPrivateNote()">Post</button>
     </div>
   </div>
 </template>
@@ -79,12 +80,36 @@ export default {
 }
 </script>
 <style scoped>
+  h1 {
+    margin: 0 auto;
+    width: 22rem;
+    height: 4rem;
+    overflow: hidden;
+    box-shadow: .25rem 0 .25rem hsla(0, 0%, 0%, .1);
+    background-image:
+      linear-gradient(180deg, hsla(0, 0%, 45%, .1) 2rem, hsla(0, 100%, 100%, 0) 2.5rem)
+    , linear-gradient(180deg, hsla(15, 100%, 85%, 1), hsla(15, 100%, 85%, 1));font-size: 1.7rem;
+    line-height: 1.8;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
   .form {
-    font-size: 20px;
-    border: solid 1px gray;
-    border-radius: 5px;
-    height: 80px;
-    width: 300px;
+    line-height: 1;
+    text-align: center;     
+    width: 275px;    
+    margin: 25px;    
+    min-height: 100px;
+    max-height: 100px;
+    padding-top: 35px;
+    position: relative;   
+    border: 1pxs solid #E8E8E8;  
+    border-top: 60px solid #fdfd86;
+    font-family: 'Reenie Beanie';    
+    font-size: 22px;      
+    border-bottom-right-radius: 60px 5px;
+    display: inline-block;    
+    background: -webkit-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Chrome10+,Safari5.1+ */
+ 
   }
   .submit {
     width: 300px;
@@ -93,40 +118,30 @@ export default {
     vertical-align: top;
   }
   .private-notes-area {
-    /*
-    width: 300px;
-    height: 300px;
-    display: inline-block;
-    overflow: scroll;
-    */
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto auto auto;
   }
   .private-note {
-  line-height: 1;
-  text-align:center;     
-  width: 275px;    
-  margin: 25px;    
-  min-height:100px;
-  max-height:100px;
-  padding-top:35px;
-  position:relative;   
-  border:1px solid #E8E8E8;  
-  border-top:60px solid #fdfd86;
-  font-family:'Reenie Beanie';    
-  font-size:22px;      
-  border-bottom-right-radius: 60px 5px;
-  display:inline-block;    
-   background: #ffff88; /* Old browsers */
-background: -moz-linear-gradient(-45deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right bottom, color-stop(81%,#ffff88), color-stop(82%,#ffff88), color-stop(82%,#ffff88), color-stop(100%,#ffffc6)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* IE10+ */
-background: linear-gradient(135deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff88', endColorstr='#ffffc6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    line-height: 1;
+    text-align:center;     
+    width: 275px;    
+    margin: 25px;    
+    min-height:100px;
+    max-height:100px;
+    padding-top:35px;
+    position:relative;   
+    border:1px solid #E8E8E8;  
+    border-top:60px solid #fdfd86;
+    font-family:'Reenie Beanie';    
+    font-size:22px;      
+    border-bottom-right-radius: 60px 5px;
+    display:inline-block;    
+    background: -webkit-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Chrome10+,Safari5.1+ */
   }
 
 .private-note:after {     
-   content: "";
+  content: "";
   position:absolute;
   z-index:-1;
   right:-0px; bottom:20px;
@@ -134,10 +149,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff88', end
   height: 25px;
   background: rgba(0, 0, 0, 0.2);
   box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
--moz-transform: matrix(-1, -0.1, 0, 1, 0, 0);
- -webkit-transform: matrix(-1, -0.1, 0, 1, 0, 0);
-      -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
-     -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
-         transform: matrix(-1, -0.1, 0, 1, 0, 0);
+  -moz-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+  -webkit-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+  -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+  -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+  transform: matrix(-1, -0.1, 0, 1, 0, 0);
 }
 </style>
