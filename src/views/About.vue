@@ -15,5 +15,5 @@
 }
 #usage {
   width: 80rem;
-}</style
->>
+}
+</style>
