@@ -104,7 +104,6 @@ export default {
         graphqlOperation(onDeletePrivateNote, {limit: this.limit, owner: this.owner})
       ).subscribe({
         next: (eventData) => {
-          console.log("deleteEvent, ", eventData)
           const privateNote = eventData.value.data.onDeletePrivateNote
           const privateNotes = this.privateNotes.filter(x => x.id !== privateNote.id)
           this.privateNotes = _.orderBy(privateNotes, 'updatedAt', 'desc').slice(0, 100)
