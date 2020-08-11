@@ -83,7 +83,8 @@ yarn lint
 ## TODOs
 - [x] Implement MVP
     - [x] Authentication
-        - [x] Show Username
+        - [x] Register User with Email
+        - [x] Show Login User Email
     - [ ] Basic Kanban Feature
         - [x] List Post-it
         - [x] Put Post-it

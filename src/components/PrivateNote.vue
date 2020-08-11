@@ -79,7 +79,6 @@ export default {
       try {
         this.content = ""
         await API.graphql(graphqlOperation(deletePrivateNote, {input: {id: id}}))
-        // TODO subscribe or read
       } catch (error) {
         error
       }
