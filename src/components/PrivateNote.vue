@@ -104,6 +104,7 @@ export default {
     text-overflow: ellipsis;
   }
   .form {
+    word-wrap: break-word;
     line-height: 1;
     text-align:center;     
     width: 275px;
@@ -137,6 +138,7 @@ export default {
     background-origin: border-box;
   }
   .private-note {
+    word-wrap: break-word;
     line-height: 1;
     text-align:center;     
     width: 275px;
