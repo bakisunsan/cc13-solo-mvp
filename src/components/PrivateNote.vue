@@ -3,8 +3,8 @@
     <h1>Put Your Post-it</h1>
     <div id="chat-form">
       <textarea v-model="content" name="content" class="form" placeholder="New Task🖋️">
-      </textarea> <br/>
-      <button class="submit" v-on:click="createPrivateNote()">Put It!</button>
+      </textarea>
+      <button class="submit" v-on:click="createPrivateNote()">Put It! 🤏</button>
     </div>
     <div class="private-notes-area">
       <div v-for="(privateNote, id) in privateNotes" v-bind:key="id">
@@ -101,6 +101,7 @@ export default {
     min-height: 100px;
     max-height: 100px;
     padding-top: 35px;
+    left: 60px;
     position: relative;   
     border: 1pxs solid #E8E8E8;  
     border-top: 60px solid #fdfd86;
@@ -112,15 +113,22 @@ export default {
  
   }
   .submit {
-    width: 300px;
-    font-size: 20px;
-    border-radius: 5px;
-    vertical-align: top;
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-align: center;
+    position: relative;
+    font-family: 'Reenie Beanie';       
+    display: inline-block;     
   }
   .private-notes-area {
     display: grid;
     grid-template-rows: auto auto auto;
     grid-template-columns: auto auto auto;
+    border: 10px solid transparent;
+    border-radius: 4px;
+    background: linear-gradient(white, white), linear-gradient(#4d4d4d, #4d4d4d) no-repeat 100% 100% / 30px 30px, linear-gradient(#4d4d4d, #4d4d4d) no-repeat 0 100% / 30px 30px, linear-gradient(#4d4d4d, #4d4d4d) no-repeat 100% 0 / 30px 30px, linear-gradient(#4d4d4d, #4d4d4d) no-repeat 0 0 / 30px 30px, linear-gradient(#e6e6e6, #e6e6e6);
+    background-clip: padding-box, border-box, border-box, border-box, border-box, border-box;
+    background-origin: border-box;
   }
   .private-note {
     line-height: 1;
