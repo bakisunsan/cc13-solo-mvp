@@ -1,19 +1,19 @@
 <template>
   <div id="app">
     <header>
-        <div id="nav">
-          <router-link to="/signin">Sign In/Out</router-link> |
-          <router-link to="/">Kanban</router-link> |
-          <router-link to="/about">About</router-link>
-        </div>
+      <div id="nav">
+        <router-link to="/signin">Sign In/Out</router-link> |
+        <router-link to="/">Kanban</router-link> |
+        <router-link to="/about">About</router-link>
+      </div>
     </header>
-    <router-view/>
- </div>
+    <router-view />
+  </div>
 </template>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -34,14 +34,18 @@
 }
 
 footer {
-    margin:  0 auto;
-    overflow: hidden;
-    box-shadow: .25rem 0 .25rem hsla(0, 0%, 0%, .1);
-    background-image:
-      linear-gradient(180deg, hsla(0, 0%, 45%, .1) 2rem, hsla(0, 100%, 100%, 0) 2.5rem)
-    , linear-gradient(180deg, hsla(15, 100%, 85%, 1), hsla(15, 100%, 85%, 1));font-size: 1.7rem;
-    line-height: 0.8;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0.25rem 0 0.25rem hsla(0, 0%, 0%, 0.1);
+  background-image: linear-gradient(
+      180deg,
+      hsla(0, 0%, 45%, 0.1) 2rem,
+      hsla(0, 100%, 100%, 0) 2.5rem
+    ),
+    linear-gradient(180deg, hsla(15, 100%, 85%, 1), hsla(15, 100%, 85%, 1));
+  font-size: 1.7rem;
+  line-height: 0.8;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 </style>

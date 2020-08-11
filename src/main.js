@@ -1,33 +1,33 @@
-import Vue from 'vue'
-import App from './App.vue'
-import './registerServiceWorker'
-import router from './router'
-import store from './store'
-import './localize'
-import Amplify, * as AmplifyModules from 'aws-amplify'
-import { AmplifyPlugin } from 'aws-amplify-vue'
-import aws_exports from './aws-exports'
-import { components } from 'aws-amplify-vue'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import Vue from "vue";
+import App from "./App.vue";
+import "./registerServiceWorker";
+import router from "./router";
+import store from "./store";
+import "./localize";
+import Amplify, * as AmplifyModules from "aws-amplify";
+import { AmplifyPlugin } from "aws-amplify-vue";
+import aws_exports from "./aws-exports";
+import { components } from "aws-amplify-vue";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(fas)
+library.add(fas);
 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component("font-awesome-icon", FontAwesomeIcon);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
-Amplify.configure(aws_exports)
+Amplify.configure(aws_exports);
 
-Vue.use(AmplifyPlugin, AmplifyModules)
+Vue.use(AmplifyPlugin, AmplifyModules);
 
 new Vue({
-    router,
-    store,
-    components: {
-        App,
-        ...components
-    },
-    render: h => h(App)
-}).$mount('#app')
+  router,
+  store,
+  components: {
+    App,
+    ...components
+  },
+  render: h => h(App)
+}).$mount("#app");
