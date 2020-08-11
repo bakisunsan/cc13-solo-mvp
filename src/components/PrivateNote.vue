@@ -27,7 +27,7 @@ import { API, Auth, graphqlOperation} from "aws-amplify"
 import { createPrivateNote, deletePrivateNote } from "../graphql/mutations"
 import { listPrivateNotes } from "../graphql/queries"
 import { getPrivateNote } from "../graphql/queries"
-import { onCreatePrivateNote } from "../graphql/subscriptions"
+import { onCreatePrivateNote, onDeletePrivateNote } from "../graphql/subscriptions"
 import _ from 'lodash'
 
 export default {
@@ -96,6 +96,17 @@ export default {
         next: (eventData) => {
           const privateNote = eventData.value.data.onCreatePrivateNote
           const privateNotes = [...this.privateNotes, privateNote]
+          this.privateNotes = _.orderBy(privateNotes, 'updatedAt', 'desc').slice(0, 100)
+        }
+      })
+
+      API.graphql(
+        graphqlOperation(onDeletePrivateNote, {limit: this.limit, owner: this.owner})
+      ).subscribe({
+        next: (eventData) => {
+          console.log("deleteEvent, ", eventData)
+          const privateNote = eventData.value.data.onDeletePrivateNote
+          const privateNotes = this.privateNotes.filter(x => x.id !== privateNote.id)
           this.privateNotes = _.orderBy(privateNotes, 'updatedAt', 'desc').slice(0, 100)
         }
       })
