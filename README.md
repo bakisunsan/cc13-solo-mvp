@@ -10,14 +10,20 @@
 ## Mock Design
 ![](./MVP-mock.jpg)
 
+## Actual Design
+![](./screen.png)
+
 ## Architecture
 ![](./architecture.png)
 
 ## Setup
 
-### Verified Version
+### Verified Environment
 - node v12.x
 - yarn 1.22.x
+
+- Mac OSX Catalina (10.15.x)
+- AWS Amplify
 
 ### Install dependencies
 ```
@@ -39,7 +45,7 @@ yarn build
 yarn lint
 ```
 
-## TODO
+## TODOs
 - [x] Implement MVP
     - [x] Authentication
         - [x] Show Username
