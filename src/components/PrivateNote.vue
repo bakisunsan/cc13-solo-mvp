@@ -2,7 +2,7 @@
   <div class="privateNote">
     <div id="icon">
           <font-awesome-icon v-if="email" :icon="['fas', 'user']" size="2x" />  
-          <div v-seen="email"> Hello, {{email}} ! </div>
+          <div v-if="email"> Hello, {{email}} ! </div>
     </div>
     <br/>
     <h1>Put Your Post-it</h1>

@@ -19,7 +19,7 @@
     - [ ] Collaborative
         - [ ] Can see same Kanban
         - [ ] Can modify same Kanban
-        - [ ] Show Name
+        - [x] Show Name
     - [x] Authentication
 - [x] Create UI Image
 - [x] Design Software Architecture
