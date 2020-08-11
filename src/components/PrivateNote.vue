@@ -122,8 +122,7 @@ export default {
   }
   .private-notes-area {
     display: grid;
-    grid-template-rows: auto auto auto;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
     border: 10px solid transparent;
     border-radius: 4px;
     background: linear-gradient(white, white), linear-gradient(#4d4d4d, #4d4d4d) no-repeat 100% 100% / 30px 30px, linear-gradient(#4d4d4d, #4d4d4d) no-repeat 0 100% / 30px 30px, linear-gradient(#4d4d4d, #4d4d4d) no-repeat 100% 0 / 30px 30px, linear-gradient(#4d4d4d, #4d4d4d) no-repeat 0 0 / 30px 30px, linear-gradient(#e6e6e6, #e6e6e6);
