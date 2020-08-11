@@ -2,13 +2,12 @@
   <div class="privateNote">
     <h1>Put Your Post-it</h1>
     <div id="chat-form">
-      <textarea v-model="content" name="content" class="form" placeholder="New Task🖋️">
-      </textarea>
+      <textarea v-model="content" name="content" class="form" placeholder="New Task" />
       <button class="submit" v-on:click="createPrivateNote()">Put It! 🤏</button>
     </div>
     <div class="private-notes-area">
       <div v-for="(privateNote, id) in privateNotes" v-bind:key="id">
-        <div class="private-note">
+        <div class="private-note" :color="randomColor(privateNote.content)">
           {{ privateNote.content }}
         </div>
       </div>
@@ -40,6 +39,17 @@ export default {
     )
   },
   methods: {
+    randomColor: function (content) {
+      const color = content.length%3;
+      switch(color) {
+        case 0:
+          return "blue";
+        case 1:
+          return "red";
+        default:
+          return "yellow";
+      }
+    },
     setOwner: async function () {
       const user = await Auth.currentUserInfo()
       this.owner = user.username
@@ -95,22 +105,19 @@ export default {
   }
   .form {
     line-height: 1;
-    text-align: center;     
-    width: 275px;    
+    text-align:center;     
+    width: 275px;
+    height: 180px;    
     margin: 25px;    
-    min-height: 100px;
-    max-height: 100px;
-    padding-top: 35px;
-    left: 60px;
-    position: relative;   
-    border: 1pxs solid #E8E8E8;  
-    border-top: 60px solid #fdfd86;
-    font-family: 'Reenie Beanie';    
-    font-size: 22px;      
+    padding-top:50px;
+    position:relative;   
+    border:1px solid #E8E8E8;  
+    font-family:'Reenie Beanie';    
+    font-size:22px;
     border-bottom-right-radius: 60px 5px;
-    display: inline-block;    
-    background: -webkit-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Chrome10+,Safari5.1+ */
- 
+    display:inline-block;
+    left: 60px;
+    background: -webkit-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%);
   }
   .submit {
     margin-bottom: 20px;
@@ -132,19 +139,31 @@ export default {
   .private-note {
     line-height: 1;
     text-align:center;     
-    width: 275px;    
+    width: 275px;
+    height: 180px;    
     margin: 25px;    
-    min-height:100px;
-    max-height:100px;
-    padding-top:35px;
+    padding-top:50px;
     position:relative;   
     border:1px solid #E8E8E8;  
-    border-top:60px solid #fdfd86;
     font-family:'Reenie Beanie';    
-    font-size:22px;      
+    font-size:22px;
     border-bottom-right-radius: 60px 5px;
-    display:inline-block;    
-    background: -webkit-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Chrome10+,Safari5.1+ */
+    display:inline-block;
+    background-image:
+    linear-gradient(180deg, hsla(0, 0%, 45%, .1) 2rem, hsla(0, 100%, 100%, 0) 2.5rem), 
+    linear-gradient(180deg, hsla(60, 100%, 85%, 1), hsla(60, 100%, 85%, 1));
+  }
+
+  div[color="blue"] {
+    background-image:
+    linear-gradient(180deg, hsla(0, 0%, 45%, .1) 2rem, hsla(0, 100%, 100%, 0) 2.5rem), 
+    linear-gradient(180deg, hsla(200, 100%, 85%, 1), hsla(200, 100%, 85%, 1));
+  }
+
+  div[color="red"] {
+    background-image:
+    linear-gradient(180deg, hsla(0, 0%, 45%, .1) 2rem, hsla(0, 100%, 100%, 0) 2.5rem), 
+    linear-gradient(180deg, hsla(15, 100%, 85%, 1), hsla(15, 100%, 85%, 1));
   }
 
 .private-note:after {     
