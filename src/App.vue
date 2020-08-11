@@ -6,10 +6,33 @@
           <router-link to="/">Kanban</router-link> |
           <router-link to="/about">About</router-link>
         </div>
+        <div>{{email}}</div>
     </header>
     <router-view/>
  </div>
 </template>
+
+<script>
+import {Auth} from "aws-amplify"
+
+export default {
+  name: 'PApp',
+  data () {
+    return {
+      email: ""
+    }
+  },
+  mounted: function () {
+    this.setEmail();
+  },
+  methods: {
+    setEmail: async function () {
+      const user = await Auth.currentUserInfo()
+      this.email = user.attributes.email;
+    }
+  }
+}
+</script>
 
 <style>
 #app {
