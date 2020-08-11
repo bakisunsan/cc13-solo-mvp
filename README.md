@@ -29,6 +29,37 @@ This is the project to learn fullstack development.
 - Mac OSX Catalina (10.15.x)
 - AWS Amplify
 
+### Setup Amplify
+
+```
+yarn global add @aws-amplify/cli
+```
+
+```
+amplify configure
+```
+
+```
+amplify init
+```
+
+```
+amplify add auth
+```
+
+```
+amplify add api
+```
+
+```
+amplify push
+```
+
+
+```
+amplify delete
+```
+
 ### Install dependencies
 ```
 yarn install
