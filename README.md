@@ -3,6 +3,7 @@
 <img src="./logo.png" width=240px/>
 
 This was created during my time as a student at Code Chrysalis”.
+
 This is the project to learn fullstack development.
 
 ## User Story
