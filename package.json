@@ -6,7 +6,8 @@
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
-        "e2e": "npx cypress run"
+        "e2e:gui": "npx cypress open",
+        "e2e:cli": "npx cypress run"
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.30",
