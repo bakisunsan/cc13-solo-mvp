@@ -93,6 +93,11 @@ yarn build
 yarn lint
 ```
 
+### Run Unit Test
+```
+yarn test
+```
+
 ### Run E2E Test (Cypress)
 
 GUI mode
