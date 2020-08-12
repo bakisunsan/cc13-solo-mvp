@@ -31,30 +31,43 @@ This is the project to learn fullstack development.
 
 ### Setup Amplify
 
+install amplify command
+
 ```
 yarn global add @aws-amplify/cli
 ```
+
+configure
 
 ```
 amplify configure
 ```
 
+initalize amplify project
+
 ```
 amplify init
 ```
+
+add auth(congito) to amplify
 
 ```
 amplify add auth
 ```
 
+add graphql backend endpoint to amplify
+
 ```
 amplify add api
 ```
+
+update amplify
 
 ```
 amplify push
 ```
 
+delete amplify backend
 
 ```
 amplify delete
@@ -80,6 +93,20 @@ yarn build
 yarn lint
 ```
 
+### Run E2E Test (Cypress)
+
+GUI mode
+
+```
+yarn e2e:gui
+```
+
+CUI mode
+
+```
+yarn e2e:cui
+```
+
 ## TODOs
 - [x] Implement MVP
     - [x] Authentication
@@ -97,7 +124,7 @@ yarn lint
         - [ ] Can modify same Kanban
 - [ ] Test
     - [ ] Unit
-    - [ ] E2E
+    - [x] E2E
 - [ ] Use CSS Pre-Poccessor
 - [x] CI/CD
     - [x] Deploy Pipeline
