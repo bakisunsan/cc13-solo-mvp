@@ -1,8 +1,8 @@
-# Kanban project-solo
+# Solo Fullstack Project - mVK Kanban
 
 <img src="./logo.png" width=240px/>
 
-This was created during my time as a student at Code Chrysalis”.
+This was created during my time as a student at "Code Chrysalis”.
 
 This is the project to learn fullstack development.
 
@@ -11,14 +11,48 @@ This is the project to learn fullstack development.
 - as a software development team, we want to add post-its to Kanban, multiple members at the same time
 - as a software development team, we want to be able to easily operate post-it from my smartphone when we all operate it.
 
+## Futures
+
+- [x] User Registeration
+- [x] User Authentication
+- [ ] 1-N Kanbans per user
+    - Currently, 1 Kanban per user
+- [x] Put/Remove Post-it to Kanban
+- [ ] Team collaboration on the same Kanban
+
 ## Mock Design
 ![](./MVP-mock.jpg)
 
+I envisioned a design that could be easily operated with one hand from a smartphone during a meeting.
+
 ## Actual Design
+Now this app consists of three screens. Selecting the navigation links at the top will take you to each screen.
+
+### Auth
+This is the screen for user registration and authentication. You can use Kanban after the authentication is completed.
+※ This screen is the same as the AWS Amplify sample authentication screen.
+![](./auth.png)
+
+### Kanban
+On the Kanban screen, you can add or remove Post-its from the Kanban of the authenticated user.
 ![](./screen.png)
 
+### About
+Explanation screen of this application.
+![](./about.png)
+
 ## Architecture
+This service is built using AWS Amplify for both the front and back end. Front and back are connected via GraphQL, and when mutations occurred, frontn is notified by Back via GraphQL subscription and the screen is updated.
 ![](./architecture.png)
+
+- AWS Amplify
+    - AppSync
+    - Lambda
+    - DynamoDB
+    - SNS
+    - CloudWatch
+    - CodePipeline
+    - CloudFormation
 
 ## Setup
 
@@ -31,47 +65,50 @@ This is the project to learn fullstack development.
 
 ### Setup Amplify
 
-install amplify command
+This application is really depend on AWS Amplify, so you need to set up Amplify first.
+
+#### install amplify command
 
 ```
 yarn global add @aws-amplify/cli
 ```
 
-configure
+#### configure
 
 ```
 amplify configure
 ```
 
-initalize amplify project
+#### initalize amplify project
 
 ```
 amplify init
 ```
 
-add auth(congito) to amplify
+#### add auth(congito) to amplify
 
 ```
 amplify add auth
 ```
 
-add graphql backend endpoint to amplify
+#### add graphql backend endpoint to amplify
 
 ```
 amplify add api
 ```
 
-update amplify
+#### update amplify
 
 ```
 amplify push
 ```
 
-delete amplify backend
-
+#### delete amplify backend
 ```
 amplify delete
 ```
+
+### Build Commands
 
 ### Install dependencies
 ```
@@ -100,17 +137,23 @@ yarn test
 
 ### Run E2E Test (Cypress)
 
+CUI mode
+
+You can run E2E test on Cypress CUI. After test executed, caputure movie is created in cypress/videos.
+
+```
+yarn e2e:cui
+```
+
 GUI mode
+
+You can run E2E test on Cypress GUI.
 
 ```
 yarn e2e:gui
 ```
 
-CUI mode
-
-```
-yarn e2e:cui
-```
+![](./cypress.png)
 
 ## TODOs
 - [x] Implement MVP
@@ -134,5 +177,7 @@ yarn e2e:cui
 - [x] CI/CD
     - [x] Deploy Pipeline
 
-## Ref
+## Reference
+- [AWS Amplify](https://docs.amplify.aws/)
 - [How to Create App with AWS Amplify](https://aws.amazon.com/jp/builders-flash/202008/amplify-crud-app/)
+- [Cypress E2E Test](https://www.cypress.io/)
