@@ -21,9 +21,8 @@ This is the project to learn fullstack development.
 - [ ] Team collaboration on the same Kanban
 
 ## Mock Design
-![](./MVP-mock.jpg)
-
 I envisioned a design that could be easily operated with one hand from a smartphone during a meeting.
+![](./MVP-mock.jpg)
 
 ## Actual Design
 Now this app consists of three screens. Selecting the navigation links at the top will take you to each screen.
