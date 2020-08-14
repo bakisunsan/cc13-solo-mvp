@@ -53,6 +53,8 @@ This service is built using AWS Amplify for both the front and back end. Front a
     - CodePipeline
     - CloudFormation
 
+- Vue
+
 ## Setup
 
 ### Verified Environment
@@ -178,5 +180,6 @@ yarn e2e:gui
 
 ## Reference
 - [AWS Amplify](https://docs.amplify.aws/)
+- [AWS Amplify Vue](https://github.com/aws-amplify/amplify-js/tree/master/packages/aws-amplify-vue)
 - [How to Create App with AWS Amplify](https://aws.amazon.com/jp/builders-flash/202008/amplify-crud-app/)
 - [Cypress E2E Test](https://www.cypress.io/)
